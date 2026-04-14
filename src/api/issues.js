@@ -7,7 +7,9 @@ export const getIssues = () => API.get('/issues/')
 export const getIssue = (id) => API.get(`/issues/${id}/`)
 
 // Submit a new issue (student)
-export const createIssue = (data) => API.post('/issues/', data)
+export const createIssue = (data, config = {}) => {
+  return API.post('/issues/', data, config)
+}
 
 // Update an issue
 export const updateIssue = (id, data) => API.patch(`/issues/${id}/`, data)
